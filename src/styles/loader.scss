@@ -1,0 +1,86 @@
+@use "./globals" as *;
+
+body {
+    overflow: hidden;
+}
+
+#global-container {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 0;
+}
+
+#page-container {
+    height: 100vh;
+}
+
+.loader {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(#000, #191919);
+    font-size: fluid-text(17px, 22px);
+
+    &-inner {
+        position: absolute;
+        bottom: 1.5em;
+        right: 1.5em;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        animation: kf-slide-in .3s;
+    }
+
+    &-rect {
+        display: flex;
+        gap: .2em;
+        & > div {
+            background: #fff;
+            width: .2em;
+            height: .7em;
+            border-radius: 2px;
+            animation: kf-vertical-scaling 1s infinite ease;
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.1s * $i - 0.5s;
+                }
+            }
+        }
+    }
+
+    &-percent {
+        color: #fff;
+        font-family: serif;
+        line-height: 1;
+        padding-top: 0.05em;
+    }
+}
+
+
+@keyframes kf-slide-in {
+    0% {
+        opacity: 0.3;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes kf-vertical-scaling {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(.5);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}

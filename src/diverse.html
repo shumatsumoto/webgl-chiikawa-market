@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Not Equal | 最先端の技術を学ぼう</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Not Equal ポートフォリオサイト" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Not Equal ポートフォリオサイト" />
+    <meta property="og:discription" content="website" />
+    <meta property="og:url" content="website" />
+    <meta property="og:image" content="https://sample.not-equal.dev/img/not-equal_pf_og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Serif+JP&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./scripts/index.js" type="module"></script>
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <link rel="stylesheet" href="./styles/loader.scss" />
+  </head>
+
+  <body class="diverse">
+    <div id="loader" class="loader">
+      <div class="loader-inner">
+        <div class="loader-rect">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span class="loader-percent">0%</span>
+      </div>
+    </div>
+
+    <div id="global-container">
+      <div id="asides">
+        <header class="header">
+          <div class="header__inner">
+            <a href="https://not-equal.dev" target="_blank" data-mouse="highlight" data-mouse-scale="2">
+              <span class="header__logo-wrap logo" data-scroll-trigger="logo">
+                <img src="/img/logo.svg" class="header__logo logo__icon" alt="">
+                <img src="/img/logo-text.svg" class="header__logo-text logo__text" alt="">
+              </span>
+            </a>
+          </div>
+        </header>
+        <!-- Side bar -->
+        <aside class="side">
+          <div class="side__inner">
+            <button href="" aria-label="メニュー" class="btn-menu" data-mouse="stuck">
+              <span class="btn-menu__inner">
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+              </span>
+            </button>
+            <div class="side__sns">
+              <span class="side__follow">FOLLOW US</span>
+              <div class="side__links">
+                <a href="#" class="side__link" target="_black" data-mouse="stuck" data-mouse-scale="2.2">
+                  <img src="/img/sns/twitter.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black" data-mouse="stuck" data-mouse-scale="2.2">
+                  <img src="/img/sns/youtube.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black" data-mouse="stuck" data-mouse-scale="2.2">
+                  <img src="/img/sns/instagram.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black" data-mouse="stuck" data-mouse-scale="2.2">
+                  <img src="/img/sns/facebook.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="menu">
+          <div class="menu__inner">
+            <nav class="menu__nav">
+              <ul class="menu__ul">
+                <li class="menu__li">
+                  <a href="/" data-mouse="highlight" data-mouse-scale="4">HOME</a>
+                </li>
+                <li class="menu__li">
+                  <a href="" data-mouse="highlight" data-mouse-scale="4">VISION</a>
+                </li>
+                <li class="menu__li">
+                  <a href="/diverse.html" data-mouse="highlight" data-mouse-scale="4">DIVERSE</a>
+                </li>
+                <li class="menu__li">
+                  <a href="" data-mouse="highlight" data-mouse-scale="4">SKILL</a>
+                </li>
+                <li class="menu__li">
+                  <a href="" data-mouse="highlight" data-mouse-scale="4">GRAPHIC</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="menu__right"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-webgl="fresnel-bg"
+        class="fresnel"
+        data-tex-1="/movie/fresnel_back.webm"
+        data-tex-2="/movie/fresnel_back.mov"
+      ></div>
+      
+      <div id="page-container" data-page="sub">
+        <main class="main">
+          <section class="top">
+            <div class="top__inner">
+              <h2 class="top__title" data-mouse="highlight" data-mouse-scale="3">DIVERSE</h2>
+              <p class="top__subtitle">技術を磨いて、新しい世界への扉を開こう。</p>
+              <div class="top__img-wrap">
+                <img
+                  id="particles"
+                  class="top__img"
+                  data-webgl="particles"
+                  data-tex-1="/img/diverse_image_2.jpeg"
+                  data-mouse="highlight"
+                  data-mouse-scale="3"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+          <section class="info" data-scroll-trigger="reversal">
+            <div class="info__inner">
+              <h3 class="info__title" data-mouse="highlight" data-mouse-scale="2">COMPANY</h3>
+              <div class="info__content">
+                <div class="info__item">
+                  <p class="info__label">Name</p>
+                  <p class="info__text">Not Equal</p>
+                </div>
+                <div class="info__item">
+                  <p class="info__label">Founded</p>
+                  <p class="info__text">April 1, 2023</p>
+                </div>
+                <div class="info__item">
+                  <p class="info__label">Founder</p>
+                  <p class="info__text">CodeMafia</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="info office">
+            <div class="info__inner">
+              <h3 class="info__title" data-mouse="highlight" data-mouse-scale="2">OFFICE</h3>
+              <div class="info__content">
+                <div class="info__item">
+                  <p class="info__label">Headquaters</p>
+                  <p class="info__text">Kyoto</p>
+                </div>
+                <div class="info__item">
+                  <p class="info__label">Contact</p>
+                  <p class="info__text">info@not-equal.dev</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="footer">
+          <div class="footer__inner">
+            <a href="https://not-equal.dev" 
+            class="footer__logo-link" 
+            target="_blank" data-mouse="highlight" data-mouse-scale="2">
+              <span class="footer__logo logo">
+                <img class="logo__icon" src="/img/logo.svg" alt="">
+                <img class="logo__text" src="/img/logo-text.svg" alt="">
+              </span>
+            </a>
+            <nav class="footer__nav">
+              <ul class="footer__ul">
+                <li class="footer__li">
+                  <a href="/">HOME</a>
+                </li>
+                <li class="footer__li">
+                  <a href="">VISION</a>
+                </li>
+                <li class="footer__li">
+                  <a href="/diverse.html">DIVERSE</a>
+                </li>
+                <li class="footer__li">
+                  <a href="">SKILL</a>
+                </li>
+                <li class="footer__li">
+                  <a href="">GRAPHIC</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__copyright">
+              <p>
+                <span data-mouse="highlight"><a href="https://not-equal.dev">© 2023 Not Equal</a></span>
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </body>
+</html>

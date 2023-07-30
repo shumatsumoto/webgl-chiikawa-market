@@ -1,0 +1,143 @@
+/*
+ * Diverseページ用スタイル
+ */
+@use "../globals" as *;
+@use "../parts/common" as *;
+
+// bodyタグに付与しているclass="diverse"でスタイルの適用を判定
+body.diverse {
+  .main {
+    @extend .content-width;
+    margin-top: 6em;
+    @include mq("xl") {
+      width: 66%;
+    }
+  }
+
+  .bc {
+    margin-top: 95px;
+    font-size: to-rem(16px);
+    @include mq("xl") {
+      margin-top: 60px;
+    }
+
+    &__lists {
+      display: flex;
+      align-items: center;
+    }
+
+    &__dot {
+      background-color: var(--c-text);
+      width: 3px;
+      height: 3px;
+      margin: 0 1em;
+      border-radius: 50%;
+    }
+
+    &__anker {
+      color: var(--c-gray);
+      font-weight: bold;
+      &.current {
+        color: var(--c-main);
+      }
+    }
+  }
+
+  .top {
+    text-align: center;
+    @include mq("xl") {
+      text-align: left;
+    }
+
+    &__title {
+      @include section-title;
+      margin-bottom: 4rem;
+    }
+
+    &__subtitle {
+      @extend .font-16-24;
+      margin-bottom: 2em;
+    }
+
+    &__img-wrap {
+      position: relative;
+      width: 100%;
+
+      & .fv_image {
+        opacity: 0;
+      }
+    }
+  }
+
+  & .info {
+    margin-top: to-rem(100px);
+    @include mq("xl") {
+      margin-top: to-rem(120px);
+    }
+
+    &__inner {
+      @include mq("xl") {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__title {
+      font-size: fluid-text(28px, 36px);
+      margin-bottom: to-rem(25px);
+      line-height: 1;
+    }
+
+    &__content {
+      font-family: $accent-font;
+      @include mq("xl") {
+        flex-basis: 75%;
+      }
+    }
+
+    &__item {
+      border-top: 1px solid var(--c-gray);
+      padding: to-rem(20px) 0px;
+
+      @include mq("xl") {
+        display: flex;
+        align-items: center;
+        padding: to-rem(28px) 0;
+        gap: to-rem(85px);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid var(--c-gray);
+      }
+    }
+
+    &__label {
+      font-size: to-rem(22px);
+      font-family: $accent-font;
+      margin-bottom: to-rem(10px);
+
+      @include mq("xl") {
+        margin-bottom: 0;
+        width: to-rem(180px);
+      }
+    }
+
+    &__text {
+      font-size: to-rem(18px);
+    }
+  }
+
+  & .office {
+    @include mq("xl") {
+      margin-top: to-rem(70px);
+    }
+  }
+
+  & .footer {
+    margin-top: to-rem(200px);
+
+    @include mq("xl") {
+      margin-top: to-rem(280px);
+    }
+  }
+}

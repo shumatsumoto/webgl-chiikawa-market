@@ -1,0 +1,125 @@
+@use "../globals" as *;
+@use "../parts/fonts" as *;
+@use "../parts/common" as *;
+@use "../parts/panel" as *;
+
+body.slides {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    
+    @include mq('lg') {
+        text-align: left;
+        flex-direction: row;
+    }
+
+    flex-wrap: wrap;
+
+    & .fv__content {
+      flex: 1 0 40%;
+      min-width: 400px;
+      margin: 0 auto;
+    }
+    & .fv__holder {
+      flex: 1 0 60%;
+      min-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  .fv {
+    position: relative;
+    height: 100vh;
+
+    &__sub-title {
+      @extend .font-14-16;
+      font-family: $accent-font;
+    }
+
+    &__title {
+      font-size: 1em;
+      position: relative;
+      color: var(--c-main);
+      font-weight: 700;
+      margin: 25px 0;
+      line-height: 1;
+    }
+
+    &__desc {
+      @extend .font-16-24;
+      padding-top: 6px;
+      max-width: 21em;
+    }
+
+    &__nav {
+      font-size: fluid-text(50px, 120px);
+      text-align: center;
+      margin-top: 0.4em;
+      @include mq('lg') {
+        text-align: left;
+    }
+    }
+
+    &__btn {
+      background: none;
+      border: 0;
+      opacity: 0.7;
+      cursor: pointer;
+      padding: 0;
+
+      & svg {
+        width: 1em;
+        height: 1em;
+      }
+
+      &:active {
+        transform: scale(0.85);
+      }
+
+      &.prev {
+        & svg {
+          transform: rotateZ(180deg);
+        }
+      }
+
+      &:hover circle {
+        @include mq("xl") {
+          transition: opacity 0.5s;
+          opacity: 0;
+        }
+      }
+    }
+
+    &__slider {
+      aspect-ratio: 16/9;
+    }
+
+    &__holder {
+      position: relative;
+      width: 100%;
+      //   max-width: 700px;
+      margin: 0 auto;
+
+      //   @include mq("xl") {
+      //     width: 60%;
+      //     max-width: 950px;
+      //   }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__text {
+      &-letter {
+        @extend .font-48-110;
+        margin: 0 auto;
+      }
+    }
+  }
+}

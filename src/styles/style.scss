@@ -1,0 +1,11 @@
+﻿@use "./vendors/css-reset.css"; // reset css
+@use "./parts/common";          // サイト共通スタイル
+@use "./parts/mouse";           // マウス用スタイル
+@use "./parts/menu";            // メニュー用スタイル
+@use "./parts/fonts";           // サイト内のフォントサイズ用スタイル
+
+// 各ページの読み込み
+@use "./pages/home";
+@use "./pages/diverse";
+@use "./pages/slides";
+

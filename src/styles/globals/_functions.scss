@@ -1,0 +1,35 @@
+/*
+ * 関数定義用ファイル
+ */
+@use "variables" as *;
+@use "sass:math";
+
+// $default-min-bp: 375px;
+// $default-max-bp: 1280px;
+// $root-font-size: 16px;
+
+// font-size: to-rem(16px) -> 1rem
+@function to-rem($px) {
+  $rem: math.div($px, $root-font-size) * 1rem;
+  @return $rem;
+}
+
+// font-size: to-em(16px, 32px) -> 0.5em
+@function to-em($px, $self-px: $root-font-size) {
+  $em: math.div($px, $self-px) * 1em;
+  @return $em;
+}
+
+/*
+ * 流体タイポ計算用 関数
+ * 
+ * @use parts/_fonts.scssファイルを参照
+ */
+@function fluid-text($min-px, $max-px, $min-bp: $default-min-bp, $max-bp: $default-max-bp) {
+  $slope: math.div($max-px - $min-px, $max-bp - $min-bp);
+  $slope-vw: $slope * 100;
+  $intercept-rems: to-rem($min-px - $slope * $min-bp);
+  $min-rems: to-rem($min-px);
+  $max-rems: to-rem($max-px);
+  @return clamp(#{$min-rems}, #{$slope-vw}vw + #{$intercept-rems}, #{$max-rems});
+}

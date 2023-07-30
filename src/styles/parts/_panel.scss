@@ -1,0 +1,51 @@
+@use "../globals" as *;
+@use "../parts/fonts" as *;
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6%;
+  text-align: left;
+  @extend .font-12-14;
+
+  @include mq("xl") {
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex: 0 0 100%;
+
+    @include mq("sm") {
+        flex-basis: 40%;
+    }
+
+    @include mq("lg") {
+        flex-basis: 27%;
+    }
+  }
+
+  &__meta {
+    display: block;
+    margin-top: 1em;
+  }
+
+  &__date {
+    margin-right: 1em;
+  }
+
+  &__title {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: .2em;
+    margin-bottom: 3em;
+  }
+
+  &__media {
+    display: inline-block;
+    width: 100%;
+    aspect-ratio: 1.34;
+    object-fit: cover;
+  }
+}

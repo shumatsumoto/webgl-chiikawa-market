@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/index.js" type="module"></script>
+    <title>WebGL Practical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/loader.scss" />
+  </head>
+  <style>
+    :root {
+      --c-text: #dadada;
+      --c-sec: rgba(218,218,218,0.8);
+      --c-main: white;
+      --c-bg: radial-gradient(#000, #191919);
+    }
+  </style>
+  <body class="slides">
+    <div id="loader" class="loader">
+      <div class="loader-inner">
+        <div class="loader-rect">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span class="loader-percent">0%</span>
+      </div>
+    </div>
+    <div
+      class="fresnel"
+      data-webgl="fresnel-bg"
+      data-tex-1="/movie/fresnel_back.webm"
+      data-tex-2="/movie/fresnel_back.mov"
+    ></div>
+    <div id="global-container">
+      <div id="asides">
+        <header class="header">
+          <div class="header__inner">
+            <a href="">
+              <span class="header__logo-wrap logo" data-scroll-trigger="logo">
+                <img
+                  src="/img/logo.svg"
+                  class="header__logo logo__icon"
+                  alt=""
+                />
+                <img
+                  src="/img/logo-text.svg"
+                  class="header__text logo__text"
+                  alt=""
+                />
+              </span>
+            </a>
+          </div>
+        </header>
+        <aside class="side" style="mix-blend-mode: difference">
+          <div class="side__inner">
+            <button class="btn-menu" data-mouse="stuck">
+              <span class="btn-menu__inner">
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+                <span class="btn-menu__wrap">
+                  <span class="btn-menu__bar"></span>
+                </span>
+              </span>
+            </button>
+            <div class="side__sns">
+              <span class="side__follow">FOLLOW US</span>
+              <div class="side__links">
+                <a href="#" class="side__link" target="_black">
+                  <img src="/img/sns/twitter.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black">
+                  <img src="/img/sns/youtube.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black">
+                  <img src="/img/sns/instagram.svg" alt="" />
+                </a>
+                <a href="#" class="side__link" target="_black">
+                  <img src="/img/sns/facebook.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="menu">
+          <div class="menu__inner">
+            <nav class="menu__nav">
+              <ul class="menu__ul">
+                <li
+                  class="menu__li"
+                  data-mouse="highlight"
+                  data-mouse-scale="4"
+                >
+                  <a href="/">HOME</a>
+                </li>
+                <li
+                  class="menu__li"
+                  data-mouse="highlight"
+                  data-mouse-scale="4"
+                >
+                  <a href="/">VISION</a>
+                </li>
+                <li
+                  class="menu__li"
+                  data-mouse="highlight"
+                  data-mouse-scale="4"
+                >
+                  <a href="/diverse.html">DIVERSE</a>
+                </li>
+                <li
+                  class="menu__li"
+                  data-mouse="highlight"
+                  data-mouse-scale="4"
+                >
+                  <a href="/">SKILL</a>
+                </li>
+                <li
+                  class="menu__li"
+                  data-mouse="highlight"
+                  data-mouse-scale="4"
+                >
+                  <a href="/">GRAPHIC</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div id="page-container" data-page="slides">
+        <main>
+          <div class="fv__content" data-mouse="highlight" data-mouse-scale="3">
+            <div class="fv__text-letter">
+              <p class="fv__sub-title">Produced by Not Equal</p>
+              <h1 class="fv__title" data-mouse="highlight" data-mouse-scale="4">
+                <span class="fv__title-text">Make It<br />Different</span>
+              </h1>
+              <p class="fv__desc">
+                最先端のWebサイトがHTMLやCSSを書き換えるだけで作成できます！
+              </p>
+              <div class="fv__nav">
+                <button class="fv__btn prev" data-mouse="stuck">
+                  <svg
+                    width="120"
+                    height="120"
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="60" cy="60" r="59.5" stroke="white" />
+                    <path
+                      d="M85 61L47.5 82.6506L47.5 39.3494L85 61Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+                <button class="fv__btn next" data-mouse="stuck">
+                  <svg
+                    width="120"
+                    height="120"
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="60" cy="60" r="59.5" stroke="white" />
+                    <path
+                      d="M85 61L47.5 82.6506L47.5 39.3494L85 61Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="fv__holder">
+            <style>
+              main {
+                margin-bottom: 1000px;
+              }
+            </style>
+            <div
+              class="fv__slider slider"
+              data-webgl="slider-frag"
+              data-frag="book"
+              data-mouse="highlight"
+              data-mouse-scale="3"
+              data-tex-1="/movie/turtle.mp4"
+              data-tex-2="/img/slider/slider_1.jpg"
+              data-tex-3="/img/slider/slider_2.jpg"
+              data-tex-4="/img/slider/slider_3.jpg"
+              data-tex-5="/img/slider/slider_5.jpg"
+            ></div>
+          </div>
+        </main>
+      </div>
+
+      <canvas id="canvas"></canvas>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+@use "sass:math";
+@use "../globals" as *;
+@use "fonts" as *;
+
+:root {
+  --c-black: #{$c-black};
+  --c-white: #{$c-white};
+  --c-gray: #{$c-gray};
+}
+
+html {
+  font-size: math.div($root-font-size, 16px) * 100%;
+}
+
+body {
+  font-family: $base-font;
+  letter-spacing: 0.05em;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: var(--c-text);
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $accent-font;
+  color: var(--c-text);
+}
+
+.sm-visible {
+  @include mq("xl") {
+    display: none;
+  }
+}
+
+.sm-hidden {
+  display: none;
+  @include mq("xl") {
+    display: block;
+  }
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: to-rem(1600px);
+}
+
+.content-width-narrow {
+  max-width: to-rem(1280px);
+  margin: 0 auto;
+}
+
+main {
+  @extend .content-width;
+}
+
+#canvas {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: var(--c-bg);
+}
+
+#page-container {
+  opacity: 0;
+}
+
+#asides {
+  position: relative;
+  z-index: 10;
+  @extend .font-10-14; // em
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+
+  & a {
+    pointer-events: auto;
+  }
+
+  &__inner {
+    width: 100%;
+    padding: 10px 20px;
+    max-width: to-rem(1920px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+  }
+
+  &__logo {
+    transition: transform .3s ease;
+
+    .inview & {
+      transform: translateX(20px);
+    }
+
+    &-wrap {
+      font-size: fluid-text(10px, 20px);
+    }
+  }
+
+  &__text {
+    transition: opacity .3s ease;
+    .inview & {
+      opacity: 0;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__icon {
+    width: 1.4em;
+    margin-right: 1em;
+  }
+
+  &__text {
+    width: 11em;
+  }
+}
+
+.side {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  color: #dadada;
+  height: 100vh;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__sns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+
+    @include mq("xl") {
+      visibility: visible;
+    }
+
+    .menu-open & {
+      visibility: visible;
+      transition: visibility 0s 1s;
+    }
+  }
+
+  &__follow {
+    @extend .font-14-16;
+    writing-mode: vertical-lr;
+    margin-bottom: 2em;
+  }
+
+  &__links {
+    font-size: 1.25em;
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 1.5em;
+    line-height: 1;
+    pointer-events: auto;
+
+    & img {
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+
+.section-hr {
+  font-size: fluid-text(80px, 300px);
+  margin-bottom: 1em;
+  border: 0;
+}
+
+@mixin section-title {
+  color: var(--c-sec);
+  @extend .font-36-65;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.7em;
+  line-height: 0.8;
+  position: relative;
+
+  @include mq("xl") {
+    text-align: left;
+  }
+
+  &-text {
+    display: inline-block;
+  }
+}
+
+.more-link {
+  position: relative;
+  font-weight: 700;
+  text-align: left;
+  font-family: $accent-font;
+  font-size: to-rem(18px);
+  margin: 1.7em 0;
+  display: inline-block;
+  color: var(--c-main);
+  width: 7.5em;
+  height: 1em;
+
+  &__text {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    transition: letter-spacing 0.3s ease;
+  }
+
+  &:hover &__text {
+    letter-spacing: 0.3em;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    // border: white 1px solid;
+
+    width: 5em;
+    height: 5em;
+
+    transition: opacity 0.1s ease 0.1s;
+  }
+
+  &:hover &__circle {
+    opacity: 0;
+  }
+
+  &__arrow {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    width: 26px;
+    height: 16px;
+    top: 50%;
+    right: 2.5em;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+
+    &-body {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 76px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover &__arrow-body {
+    transform: translateX(50px);
+  }
+}
+
+.particle-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  
+  & a {
+    color: var(--c-white);
+  }
+
+  &__inner {
+    @extend .content-width;
+    padding: 40px 15px 30px;
+    text-align: center;
+  }
+
+  &__logo {
+    font-size: fluid-text(8px, 16px);
+    margin-bottom: 2em;
+
+    &-link {
+      display: inline-block;
+    }
+  }
+
+  &__nav {
+    @extend .font-16-18;
+    margin-bottom: 2em;
+  }
+
+  &__ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq("md") {
+      justify-content: center;
+    }
+  }
+
+  &__li {
+    margin-right: 1.3em;
+    margin-bottom: 1em;
+  }
+
+  &__copyright {
+    @extend .font-14-16;
+  }
+}
+
+.fresnel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[data-scroll-trigger="fade"] {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  &.inview {
+    opacity: 1;
+  }
+}
+
+.load-pp {
+  visibility: hidden;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+
+.disable-hover {
+  pointer-events: none;
+
+  & .mouse-viewport {
+    opacity: 0 !important;
+  }
+}
