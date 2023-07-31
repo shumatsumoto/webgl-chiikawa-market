@@ -327,10 +327,10 @@ main {
 }
 
 .footer {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(254,251,190);
   
   & a {
-    color: var(--c-white);
+    color: var(--c-black);
   }
 
   &__inner {
