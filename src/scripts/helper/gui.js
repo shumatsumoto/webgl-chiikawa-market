@@ -7,7 +7,7 @@ let lilGUI = null;
 
 async function init() {
     const { default: GUI } = await import('lil-gui');
-    lilGUI = new GUI();
+    // lilGUI = new GUI();
 }
 
 function add(callback) {
