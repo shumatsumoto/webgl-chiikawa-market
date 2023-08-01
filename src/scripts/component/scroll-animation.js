@@ -159,10 +159,10 @@ function reversal(target) {
   }
 
   gsap.set(":root", {
-    "--c-text": "#dadada",
+    "--c-text": "#222",
     "--c-sec": "rgba(218,218,218,0.8)",
     "--c-main": "white",
-    "--c-bg": "radial-gradient(#000, #191919)",
+    "--c-bg": "radial-gradient(#fff, #FEFBBE)",
   });
 
   ScrollTrigger.create({
@@ -170,10 +170,10 @@ function reversal(target) {
     start: startTrigger,
     onEnter() {
       gsap.to(":root", {
-        "--c-text": "#333",
+        "--c-text": "#222",
         "--c-sec": "rgba(51,51,51,0.8)",
         "--c-main": "black",
-        "--c-bg": "radial-gradient(#fff, #e5e5e5)",
+        "--c-bg": "radial-gradient(#fff, #FFC1C9)",
       });
       gsap.to(reversal, {
         value: 1,
@@ -182,10 +182,10 @@ function reversal(target) {
     },
     onLeaveBack() {
       gsap.to(":root", {
-        "--c-text": "#dadada",
+        "--c-text": "#222",
         "--c-sec": "rgba(218,218,218,0.8)",
         "--c-main": "white",
-        "--c-bg": "radial-gradient(#000, #191919)",
+        "--c-bg": "radial-gradient(#fff, #FFC1C9)",
       });
       gsap.to(reversal, {
         value: 0,
