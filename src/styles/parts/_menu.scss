@@ -4,7 +4,8 @@
 .btn-menu {
   position: relative;
   z-index: 999;
-  display: flex;
+  // display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 5em;
