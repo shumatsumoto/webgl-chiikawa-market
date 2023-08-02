@@ -1,6 +1,6 @@
 /**
  * スクロールアニメーションの制御ファイル
- * 
+ *
  * 概要：data-scroll-trigger属性によって実行される処理
  */
 import gsap from "gsap";
@@ -57,7 +57,6 @@ function progress(target) {
     },
   });
 }
-
 
 // function progressSplit(target) {
 //   ScrollTrigger.create({
@@ -161,7 +160,7 @@ function reversal(target) {
   gsap.set(":root", {
     "--c-text": "#222",
     "--c-sec": "rgba(218,218,218,0.8)",
-    "--c-main": "white",
+    "--c-main": "#FFC1C9",
     "--c-bg": "radial-gradient(#fff, #FEFBBE)",
   });
 
