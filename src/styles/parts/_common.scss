@@ -133,7 +133,7 @@ main {
   }
 
   &__logo {
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
 
     .inview & {
       transform: translateX(20px);
@@ -145,7 +145,7 @@ main {
   }
 
   &__text {
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
     .inview & {
       opacity: 0;
     }
@@ -176,7 +176,7 @@ main {
   height: 100vh;
   pointer-events: none;
   mix-blend-mode: difference;
-  
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -328,8 +328,8 @@ main {
 }
 
 .footer {
-  background: rgb(254,251,190);
-  
+  background: rgb(254, 251, 190);
+
   & a {
     color: var(--c-black);
     font-weight: bold;
@@ -352,7 +352,7 @@ main {
 
   &__nav {
     @extend .font-16-18;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   &__ul {
@@ -371,6 +371,19 @@ main {
 
   &__copyright {
     @extend .font-14-16;
+  }
+}
+
+.sns {
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: auto;
+    img {
+      width: 1.25em;
+      height: 1.25em;
+    }
   }
 }
 

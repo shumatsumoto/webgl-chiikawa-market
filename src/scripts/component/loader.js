@@ -1,6 +1,6 @@
 /**
  * ローディング制御ファイル
- * 
+ *
  * 概要：画像、動画のローディング、ローディングアニメーションの実行
  */
 import { TextureLoader, VideoTexture, LinearFilter } from "three";
@@ -53,11 +53,13 @@ async function loadAllAssets() {
     let prms = null;
 
     const loadFn = /\.(mp4|webm|mov)$/.test(url) ? loadVideo : loadImg;
-    prms = loadFn(url).then((tex) => {
-      textureCache.set(url, tex);
-    }).catch(() => {
-      console.error('Media Download Error:', url);
-    });
+    prms = loadFn(url)
+      .then((tex) => {
+        textureCache.set(url, tex);
+      })
+      .catch(() => {
+        console.error("Media Download Error:", url);
+      });
 
     texPrms.push(prms);
   });
@@ -118,8 +120,8 @@ async function loadImg(url) {
     tex.minFilter = LinearFilter;
     tex.needsUpdate = false;
     return tex;
-  } catch(e) {
-    throw new Error;
+  } catch (e) {
+    throw new Error();
   } finally {
     // 読み込み対象のプログレスの数値に+1
     incrementProgress();
@@ -139,7 +141,6 @@ async function loadVideo(url) {
     // !"" => true
     return null;
   }
-  
 
   incrementTotal();
   return new Promise((resolve, reject) => {
@@ -163,7 +164,7 @@ async function loadVideo(url) {
     video.onerror = () => {
       incrementProgress();
       reject();
-    }
+    };
     video.src = url;
   });
 }
@@ -188,8 +189,8 @@ function _loadingAnimationStart() {
   tl.to($.loader.firstElementChild, {
     opacity: 0,
     y: 10,
-    duration: 0.3,
-    delay: 0.5,
+    duration: 0.1,
+    delay: 0.4,
   })
     .set($.globalContainer, {
       visibility: "visible",
@@ -204,16 +205,16 @@ function _loadingAnimationStart() {
 async function _loadingAnimationEnd(tl) {
   const page = INode.qsAll(`${config.$.pageContainer}, #asides`);
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     tl.to(page, {
       opacity: 1,
       duration: 1,
       onComplete() {
         loader.isLoaded = true;
         resolve();
-      }
+      },
     });
-  })
+  });
 }
 
 let loadingAnimation = null;
