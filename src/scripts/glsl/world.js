@@ -70,7 +70,7 @@ async function init(canvas, viewport, background = "none") {
 
   if (window.debug) {
     stats = new Stats();
-    document.body.appendChild(stats.dom);
+    // document.body.appendChild(stats.dom);
   }
 
   _bindEvents();
