@@ -17,7 +17,7 @@ void main() {
   // plane color
   vec4 tex = texture(tex1, uv);
   vec4 gray = grayscale(tex);
-  vec4 planeColor = mix(gray, tex, uHover);
+  vec4 planeColor = mix(tex, tex, uHover);
 
   // sphere color
   vec3 ray = vec3(cos(uTick * 0.01) * .3, sin(uTick * 0.01) * .3, 1.);
