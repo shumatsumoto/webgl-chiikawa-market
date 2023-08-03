@@ -39,7 +39,7 @@ body {
         display: flex;
         gap: .2em;
         & > div {
-            background: #fff;
+            background: #222;
             width: .2em;
             height: .7em;
             border-radius: 2px;
@@ -54,7 +54,7 @@ body {
     }
 
     &-percent {
-        color: #fff;
+        color: #222;
         font-family: serif;
         line-height: 1;
         padding-top: 0.05em;
