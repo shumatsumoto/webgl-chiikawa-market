@@ -163,7 +163,11 @@ main {
   }
 
   &__text {
-    width: 11em;
+    width: 15em;
+
+    @include mq("xl") {
+      width: 11em;
+    }
   }
 }
 

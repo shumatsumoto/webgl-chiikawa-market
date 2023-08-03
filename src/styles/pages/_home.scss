@@ -171,11 +171,13 @@ body.home {
       max-width: 400px;
       aspect-ratio: 1;
       margin: 0 auto;
-      margin-bottom: 2em;
+      margin-bottom: 0;
 
       @include mq("xl") {
         max-width: unset;
         margin: 0;
+        margin-bottom: 2em;
+        height: 70vh;
       }
     }
 
@@ -229,6 +231,7 @@ body.home {
     }
 
     &__p {
+      text-align: left;
       &:first-child {
         margin-bottom: 2em;
       }
@@ -261,9 +264,13 @@ body.home {
 
     &__right {
       flex: 1 0 50%;
-
       display: flex;
       flex-direction: column;
+      margin-bottom: 2em;
+
+      @include mq("xl") {
+        margin-bottom: 2em;
+      }
 
       .diverse__title {
         display: block;
