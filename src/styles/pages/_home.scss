@@ -11,7 +11,7 @@ body.home {
   .fv {
     position: relative;
     height: 100vh;
-  
+
     &__content {
       @extend .font-48-110;
       position: absolute;
@@ -23,7 +23,7 @@ body.home {
       text-align: center;
       margin: 0 auto;
       overflow-x: hidden;
-  
+
       @include mq("xl") {
         top: auto;
         transform: none;
@@ -31,7 +31,7 @@ body.home {
         left: 5%;
       }
     }
-  
+
     &__text {
       &-letter {
         display: block;
@@ -48,19 +48,19 @@ body.home {
         aspect-ratio: 1;
         max-width: 450px;
         transform: translateX(-2000px);
-  
+
         @include mq("xl") {
           position: relative;
           transform: none;
         }
       }
     }
-  
+
     &__sub-title {
       @extend .font-14-16;
       font-family: $accent-font;
     }
-  
+
     &__title {
       font-size: 1em;
       position: relative;
@@ -69,23 +69,23 @@ body.home {
       margin: 25px 0;
       line-height: 1;
     }
-  
+
     &__desc {
       @extend .font-16-24;
       padding-top: 6px;
     }
-  
+
     &__slider {
       aspect-ratio: 16/9;
     }
-  
+
     &__main {
       position: absolute;
       top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-  
+
       @include mq("xl") {
         top: 50%;
         display: flex;
@@ -93,20 +93,20 @@ body.home {
         height: 100vh;
       }
     }
-  
+
     &__holder {
       position: relative;
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
-  
+
       @include mq("xl") {
         width: 60%;
         max-width: 950px;
         margin-bottom: 20%;
       }
     }
-  
+
     &__nav {
       font-size: fluid-text(50px, 120px);
       text-align: right;
@@ -116,29 +116,29 @@ body.home {
       height: 1em;
       width: 100%;
     }
-  
+
     &__btn {
       background: none;
       border: 0;
       opacity: 1;
       cursor: pointer;
       padding: 0;
-  
+
       & svg {
         width: 1em;
         height: 1em;
       }
-  
+
       &:active {
         transform: scale(0.85);
       }
-  
+
       &.prev {
         & svg {
           transform: rotateZ(180deg);
         }
       }
-  
+
       &:hover circle {
         @include mq("xl") {
           transition: opacity 0.5s;
@@ -147,32 +147,32 @@ body.home {
       }
     }
   }
-  
+
   .vision {
     &__inner {
       display: flex;
       flex-direction: column;
-  
+
       @include mq("xl") {
         flex-direction: row;
       }
     }
-  
+
     &__left {
       position: relative;
       flex: 1 0 50%;
-  
+
       display: flex;
       flex-direction: column;
     }
-  
+
     &__raymarching {
       width: 100%;
       max-width: 400px;
       aspect-ratio: 1;
       margin: 0 auto;
       margin-bottom: 2em;
-  
+
       @include mq("xl") {
         max-width: unset;
         margin: 0;
@@ -188,36 +188,36 @@ body.home {
       height: 80%;
       transform: translate(-50%, -50%);
     }
-  
+
     &__right {
       flex: 1 0 50%;
-  
+
       display: flex;
       align-items: center;
       text-align: center;
       @extend .font-16-20;
-  
+
       @include mq("xl") {
         text-align: left;
       }
-  
+
       &-inner {
         max-width: 575px;
         margin: 0 auto;
       }
     }
-  
+
     &__title {
       @include section-title;
       overflow: hidden;
-  
+
       &.sm .vision__title-text {
         @include mq("xl") {
           position: absolute;
           transform: translateX(3000px);
         }
       }
-  
+
       &.pc .vision__title-text {
         position: absolute;
         transform: translateX(2000px);
@@ -227,23 +227,23 @@ body.home {
         }
       }
     }
-  
+
     &__p {
       &:first-child {
         margin-bottom: 2em;
       }
     }
-  
+
     &__more {
       margin-top: 4em;
       text-align: right;
-  
+
       @include mq("xl") {
         text-align: left;
       }
     }
   }
-  
+
   .diverse {
     @include mq("xl") {
       min-height: 100vh;
@@ -252,32 +252,32 @@ body.home {
       @extend .font-16-20;
       display: flex;
       flex-direction: column;
-  
+
       @include mq("xl") {
         flex-direction: row;
         align-items: center;
       }
     }
-  
+
     &__right {
       flex: 1 0 50%;
-  
+
       display: flex;
       flex-direction: column;
     }
-  
+
     &__holder {
       position: relative;
       height: 40vh;
       width: 100%;
       max-width: 30em;
       margin: 0 auto;
-      
+
       @include mq("xl") {
         height: 70vh;
       }
     }
-  
+
     &__img {
       position: absolute;
       top: 0;
@@ -285,59 +285,59 @@ body.home {
       width: 100%;
       height: 100%;
     }
-  
+
     &__left {
       flex: 1 0 50%;
-  
+
       display: flex;
       align-items: center;
       text-align: center;
-  
+
       @include mq("xl") {
         text-align: left;
       }
-  
+
       &-inner {
         max-width: 30em;
         margin: 0 auto;
       }
     }
-  
+
     &__title {
       @include section-title;
     }
-  
+
     &__more {
       margin: 2em 0;
       text-align: right;
-  
+
       @include mq("xl") {
         margin-top: 4em;
         text-align: left;
       }
     }
   }
-  
+
   .skill {
     display: flex;
     align-items: start;
     padding: 60px 16px;
     text-align: center;
     position: relative;
-  
+
     @include mq("xl") {
       min-height: 100vh;
       text-align: left;
     }
-  
+
     &__inner {
       width: 100%;
     }
-  
+
     &__title {
       @include section-title;
     }
-  
+
     &__desc {
       @extend .font-16-20;
       max-width: 21em;
@@ -346,7 +346,7 @@ body.home {
         margin: 0;
       }
     }
-  
+
     &__holder {
       position: relative;
       margin: 0 auto;
@@ -356,28 +356,28 @@ body.home {
       text-align: center;
       margin-top: 3em;
     }
-  
+
     &__slider {
       width: 100%;
       aspect-ratio: 7/4;
     }
-  
+
     &__content {
       @extend .font-14-20;
-  
+
       line-height: 1;
       margin-top: 1em;
-  
+
       overflow-x: hidden;
       width: 100%;
       max-width: 30em;
       text-align: center;
-  
+
       line-height: 1;
       padding: 1em 0;
       margin: 0 auto;
       margin-top: 1em;
-  
+
       @include mq("xl") {
         position: absolute;
         padding: 1rem 2rem;
@@ -386,7 +386,7 @@ body.home {
         text-align: right;
       }
     }
-  
+
     &__ul {
       position: relative;
       counter-reset: number 0;
@@ -395,7 +395,7 @@ body.home {
       list-style: none;
       transition: transform 0.4s;
     }
-  
+
     &__li {
       position: absolute;
       top: 0;
@@ -404,65 +404,66 @@ body.home {
       height: 100%;
       transition: opacity 0.4s;
       opacity: 0;
-  
+
       &:first-child {
         opacity: 1;
       }
     }
-  
+
     &__headline {
       @extend .font-36-48;
       margin-bottom: 0.5em;
       font-weight: 700;
-  
+
       &::before {
+        display: none;
         font-size: 1.6em;
         counter-increment: number 1;
         content: "0" counter(number) " ";
       }
     }
-  
+
     &__text {
       @extend .font-14-20;
       margin: 0 auto;
       text-align: justify;
       line-height: 1.8;
-  
+
       @include mq("xl") {
         width: 100%;
         margin: auto;
       }
     }
-  
+
     .fv__nav {
       text-align: left;
     }
   }
-  
+
   .graphic {
     text-align: center;
-  
+
     @include mq("xl") {
       text-align: left;
     }
-  
+
     &__title {
       @include section-title;
     }
-  
+
     &__subtitle {
       @extend .font-16-20;
       margin-bottom: 2em;
     }
-  
+
     &__inner {
       @extend .content-width-narrow;
     }
-  
+
     &__more {
       text-align: right;
       margin-right: 5%;
-  
+
       & img {
         filter: #{"invert()"};
       }
