@@ -251,7 +251,7 @@ body.home {
     &__inner {
       @extend .font-16-20;
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
 
       @include mq("xl") {
         flex-direction: row;
@@ -264,6 +264,13 @@ body.home {
 
       display: flex;
       flex-direction: column;
+
+      .diverse__title {
+        display: block;
+        @include mq("xl") {
+          display: none;
+        }
+      }
     }
 
     &__holder {
@@ -300,6 +307,13 @@ body.home {
       &-inner {
         max-width: 30em;
         margin: 0 auto;
+      }
+
+      .diverse__title {
+        display: none;
+        @include mq("xl") {
+          display: block;
+        }
       }
     }
 
