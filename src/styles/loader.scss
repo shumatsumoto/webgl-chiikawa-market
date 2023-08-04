@@ -25,6 +25,14 @@ body {
     background: radial-gradient(#fff, #fff);
     font-size: fluid-text(17px, 22px);
 
+    &-img {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        animation: kf-image-in .8s;
+    }
+
     &-inner {
         position: absolute;
         bottom: 1.5em;
@@ -70,6 +78,21 @@ body {
     100% {
         opacity: 1;
         transform: none;
+    }
+}
+
+@keyframes kf-image-in {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
