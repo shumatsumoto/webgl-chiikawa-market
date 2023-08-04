@@ -248,17 +248,37 @@ body.home {
   }
 
   .diverse {
+    &--1 {
+      margin-bottom: 5em;
+      
+      @include mq("xl") {
+        margin-bottom: auto;
+      }
+    }
+
     @include mq("xl") {
       min-height: 100vh;
     }
     &__inner {
       @extend .font-16-20;
       display: flex;
-      flex-direction: column-reverse;
+
+      &--1 {
+        flex-direction: column-reverse;
+      }
+      &--2 {
+        flex-direction: column-reverse;
+      }
 
       @include mq("xl") {
-        flex-direction: row;
         align-items: center;
+
+        &--1 {
+          flex-direction: row-reverse;
+        }
+        &--2 {
+          flex-direction: row;
+        }
       }
     }
 

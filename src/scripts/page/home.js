@@ -63,22 +63,6 @@ export default async function ({
     fvText.mesh.position.z = 200;
   }
 
-  // VISIONセクション内のエフェクトを取得
-  const raymarching = world.getObjByEl(".vision__raymarching");
-  const fallback = world.getObjByEl(".vision__fallback");
-
-  if (utils.isLowPerformanceMode()) {
-    // ローパフォーマンスモードの時、高負荷のレイマーチングを削除
-    world.removeObj(raymarching);
-    // .vision__fallbackのエフェクトにマウス入力を連携
-    world.addRaycastingTarget(".vision__fallback");
-  } else {
-    // 高パフォーマンスモードの時、フォールバック用の.vision__fallbackを削除
-    world.removeObj(fallback);
-    // レイマーチングのエフェクトにマウス入力を連携
-    world.addRaycastingTarget(".vision__raymarching");
-  }
-
   // ローディングアニメーションを追加
   loader.addLoadingAnimation(loadAnimation);
 }
