@@ -26,10 +26,10 @@ class Ob {
 
     if (!this.rect.width || !this.rect.height) {
       if (window.debug) {
-        console.log(
-          "要素に1px x 1px以上の大きさがないため、メッシュの作成をスキップします:",
-          this.$.el
-        );
+        // console.log(
+        //   "要素に1px x 1px以上の大きさがないため、メッシュの作成をスキップします:",
+        //   this.$.el
+        // );
       }
       return {};
     }
