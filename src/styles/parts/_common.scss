@@ -233,7 +233,7 @@ main {
 }
 
 @mixin section-title {
-  color: var(--c-sec);
+  color: #222;
   @extend .font-36-65;
   font-weight: 700;
   text-align: center;
