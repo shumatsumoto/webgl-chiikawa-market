@@ -12,7 +12,7 @@
 
 ## :computer: URL
 
-...
+[...](https://webgl-chiikawa-market.netlify.app/)
 
 ## :pencil2: Overview
 
@@ -25,7 +25,30 @@
 
 ## :pushpin: Usage
 
-...
+Git clone
+```
+$ git clone https://github.com/shumatsumoto/webgl-chiikawa-market.git
+```
+Move to directory
+```
+$ cd webgl-chiikawa-market
+```
+Install the library
+```
+$ npm install
+```
+Launch a local server
+```
+$ npm run dev
+```
+
+Access URL： 
+http://localhost:5173
+
+Build（Deploy files）
+```
+$ npm run build
+```
 
 ## :railway_car: Features
 
@@ -33,7 +56,7 @@
 
 ## :green_book: Reference
 
-- []()
+- [Not Equal](https://not-equal.dev/)
 
 ## :hatching_chick: Author
 
