@@ -12,16 +12,18 @@
 
 ## :computer: URL
 
-[...](https://webgl-chiikawa-market.netlify.app/)
+https://webgl-chiikawa-market.netlify.app/
 
 ## :pencil2: Overview
 
-...
+A modern site was created using WebGL, a specification for controlling 3D graphics in the browser.
 
 ## :hammer: Requirement
 
 - macOS
 - JavaScript
+- Three.js
+- WebGL
 
 ## :pushpin: Usage
 
@@ -52,7 +54,7 @@ $ npm run build
 
 ## :railway_car: Features
 
-...
+How to deal with shader language.
 
 ## :green_book: Reference
 
